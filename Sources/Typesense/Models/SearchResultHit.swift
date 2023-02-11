@@ -18,9 +18,9 @@ public struct SearchResultHit<T: Codable>: Codable {
     public var textMatch: Int64?
     /** Can be any key-value pair */
     public var geoDistanceMeters: [String:Int]?
-    public var vectorDistance: String?
+    public var vectorDistance: Float?
 
-    public init(highlights: [SearchHighlight]? = nil, document: T? = nil, textMatch: Int64? = nil, geoDistanceMeters: [String:Int]? = nil, vectorDistance: String? = nil) {
+    public init(highlights: [SearchHighlight]? = nil, document: T? = nil, textMatch: Int64? = nil, geoDistanceMeters: [String:Int]? = nil, vectorDistance: Float? = nil) {
         self.highlights = highlights
         self.document = document
         self.textMatch = textMatch
