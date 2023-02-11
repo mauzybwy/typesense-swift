@@ -20,7 +20,7 @@ public struct SearchResultHit<T: Codable>: Codable {
     public var geoDistanceMeters: [String:Int]?
     public var vectorDistance: String?
 
-    public init(highlights: [SearchHighlight]? = nil, document: T? = nil, textMatch: Int64? = nil, geoDistanceMeters: [String:Int]? = nil, vectorDistance? = nil) {
+    public init(highlights: [SearchHighlight]? = nil, document: T? = nil, textMatch: Int64? = nil, geoDistanceMeters: [String:Int]? = nil, vectorDistance: String? = nil) {
         self.highlights = highlights
         self.document = document
         self.textMatch = textMatch
