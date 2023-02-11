@@ -32,6 +32,8 @@ public struct MultiSearchParameters: Codable {
     public var maxFacetValues: Int?
     /** Facet values that are returned can now be filtered via this parameter. The matching facet text is also highlighted. For example, when faceting by &#x60;category&#x60;, you can set &#x60;facet_query&#x3D;category:shoe&#x60; to return only facet values that contain the prefix \&quot;shoe\&quot;. */
     public var facetQuery: String?
+    /** Vector Query. */
+    public var vectorQuery: String?
     /** The number of typographical errors (1 or 2) that would be tolerated. Default: 2  */
     public var numTypos: Int?
     /** Results from this specific page number would be fetched. */
@@ -85,7 +87,7 @@ public struct MultiSearchParameters: Codable {
     /** Minimum word length for 2-typo correction to be applied.  The value of num_typos is still treated as the maximum allowed typos.  */
     public var minLen2typo: Int?
 
-    public init(q: String? = nil, queryBy: String? = nil, queryByWeights: String? = nil, maxHits: String? = nil, _prefix: String? = nil, filterBy: String? = nil, sortBy: String? = nil, facetBy: String? = nil, maxFacetValues: Int? = nil, facetQuery: String? = nil, numTypos: Int? = nil, page: Int? = nil, perPage: Int? = nil, groupBy: String? = nil, groupLimit: Int? = nil, includeFields: String? = nil, excludeFields: String? = nil, highlightFullFields: String? = nil, highlightAffixNumTokens: Int? = nil, highlightStartTag: String? = nil, highlightEndTag: String? = nil, snippetThreshold: Int? = nil, dropTokensThreshold: Int? = nil, typoTokensThreshold: Int? = nil, pinnedHits: String? = nil, hiddenHits: String? = nil, highlightFields: String? = nil, preSegmentedQuery: Bool? = nil, enableOverrides: Bool? = nil, prioritizeExactMatch: Bool? = nil, exhaustiveSearch: Bool? = nil, searchCutoffMs: Int? = nil, useCache: Bool? = nil, cacheTtl: Int? = nil, minLen1typo: Int? = nil, minLen2typo: Int? = nil) {
+    public init(q: String? = nil, queryBy: String? = nil, queryByWeights: String? = nil, maxHits: String? = nil, _prefix: String? = nil, filterBy: String? = nil, sortBy: String? = nil, facetBy: String? = nil, maxFacetValues: Int? = nil, facetQuery: String? = nil, vectorQuery: String? = nil, numTypos: Int? = nil, page: Int? = nil, perPage: Int? = nil, groupBy: String? = nil, groupLimit: Int? = nil, includeFields: String? = nil, excludeFields: String? = nil, highlightFullFields: String? = nil, highlightAffixNumTokens: Int? = nil, highlightStartTag: String? = nil, highlightEndTag: String? = nil, snippetThreshold: Int? = nil, dropTokensThreshold: Int? = nil, typoTokensThreshold: Int? = nil, pinnedHits: String? = nil, hiddenHits: String? = nil, highlightFields: String? = nil, preSegmentedQuery: Bool? = nil, enableOverrides: Bool? = nil, prioritizeExactMatch: Bool? = nil, exhaustiveSearch: Bool? = nil, searchCutoffMs: Int? = nil, useCache: Bool? = nil, cacheTtl: Int? = nil, minLen1typo: Int? = nil, minLen2typo: Int? = nil) {
         self.q = q
         self.queryBy = queryBy
         self.queryByWeights = queryByWeights
@@ -96,6 +98,7 @@ public struct MultiSearchParameters: Codable {
         self.facetBy = facetBy
         self.maxFacetValues = maxFacetValues
         self.facetQuery = facetQuery
+        self.vectorQuery = vectorQuery
         self.numTypos = numTypos
         self.page = page
         self.perPage = perPage
@@ -135,6 +138,7 @@ public struct MultiSearchParameters: Codable {
         case facetBy = "facet_by"
         case maxFacetValues = "max_facet_values"
         case facetQuery = "facet_query"
+        case vectorQuery = "vector_query"
         case numTypos = "num_typos"
         case page
         case perPage = "per_page"

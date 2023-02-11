@@ -95,6 +95,10 @@ public struct Documents {
         if let facetQuery = searchParameters.facetQuery {
             searchQueryParams.append(URLQueryItem(name: "facet_query", value: facetQuery))
         }
+
+        if let vectorQuery = searchParameters.vectorQuery {
+            searchQueryParams.append(URLQueryItem(name: "vector_query", value: vectorQuery))
+        }
         
         if let numTypos = searchParameters.numTypos {
             searchQueryParams.append(URLQueryItem(name: "num_typos", value: String(numTypos)))

@@ -56,6 +56,10 @@ public struct MultiSearch {
         if let facetQuery = commonParameters.facetQuery {
             searchQueryParams.append(URLQueryItem(name: "facet_query", value: facetQuery))
         }
+
+        if let vectorQuery = commonParameters.vectorQuery {
+            searchQueryParams.append(URLQueryItem(name: "vector_query", value: vectorQuery))
+        }
         
         if let numTypos = commonParameters.numTypos {
             searchQueryParams.append(URLQueryItem(name: "num_typos", value: String(numTypos)))
